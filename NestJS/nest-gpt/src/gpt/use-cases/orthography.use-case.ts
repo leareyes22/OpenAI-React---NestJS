@@ -32,7 +32,7 @@ export const orthographyCheckUseCase = async (
         {
           userScore: number,
           errors: string[], // ['error -> solución']
-          message: strong, // usa emojis y texto para felicitar al usuario
+          message: string, // usa emojis y texto para felicitar al usuario
         }
         `,
       },
