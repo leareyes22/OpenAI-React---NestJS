@@ -49,8 +49,6 @@ export const OrthographyPage = () => {
     }
 
     setIsLoading(false);
-
-    // TODO: Añadir el mensaje de isGpt en true
   };
 
   return (
@@ -84,19 +82,6 @@ export const OrthographyPage = () => {
         placeholder="Escribe aquí lo que deseas"
         disableCorrections
       />
-
-      {/*<TextMessageBoxFile
-        onSendMessage={handlePost}
-        placeholder="Escribe aquí lo que deseas"
-      />
-
-      <TextMessageBoxSelect
-        onSendMessage={console.log}
-        options={[
-          { id: "1", text: "Hola" },
-          { id: "2", text: "Mundo" },
-        ]}
-      />*/}
     </div>
   );
 };

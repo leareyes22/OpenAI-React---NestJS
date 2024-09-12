@@ -4,7 +4,7 @@ interface Options {
   prompt: string;
 }
 
-export const proConsDiscusserUseCase = async (
+export const prosConsDiscusserUseCase = async (
   openai: OpenAI,
   options: Options,
 ) => {
@@ -29,5 +29,5 @@ export const proConsDiscusserUseCase = async (
     ],
   });
 
-  return completion.choices[0].message;
+  return { content: completion.choices[0].message.content };
 };

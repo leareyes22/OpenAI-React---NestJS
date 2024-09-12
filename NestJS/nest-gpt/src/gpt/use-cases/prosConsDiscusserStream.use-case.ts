@@ -4,7 +4,7 @@ interface Options {
   prompt: string;
 }
 
-export const proConsDiscusserStreamUseCase = async (
+export const prosConsDiscusserStreamUseCase = async (
   openai: OpenAI,
   options: Options,
 ) => {
