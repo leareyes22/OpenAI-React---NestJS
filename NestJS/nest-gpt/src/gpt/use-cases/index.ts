@@ -1,3 +1,3 @@
 export * from './orthography.use-case';
-export * from './proConsDiscusser.use-case';
-export * from './proConsDiscusserStream.use-case';
+export * from './prosConsDiscusser.use-case';
+export * from './prosConsDiscusserStream.use-case';
