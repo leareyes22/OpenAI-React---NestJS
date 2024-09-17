@@ -3,7 +3,7 @@ import {
   OrthographyPage,
   ProsConsPage,
   ProsConsStreamPage,
-  TranslatePage,
+  TranslateStreamPage,
   TextToAudioPage,
   ImageGenerationPage,
   ImageTunningPage,
@@ -39,7 +39,7 @@ export const menuRoutes = [
     icon: "fa-solid fa-language",
     title: "Traducir",
     description: "Textos a otros idiomas",
-    component: <TranslatePage />,
+    component: <TranslateStreamPage />,
   },
   {
     to: "/text-to-audio",

@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 
 interface Props {
-  onSendMessage: (message: string, selectedOption: string) => void;
+  onSendMessage: (selectedOption: string, message: string) => void;
   placeholder?: string;
   disableCorrections?: boolean;
   options: Option[];
@@ -25,6 +25,7 @@ export const TextMessageBoxSelect = ({
     event.preventDefault();
 
     if (message.trim().length === 0) return;
+    if (selectedOption === "") return;
 
     onSendMessage(message, selectedOption);
   };
