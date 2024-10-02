@@ -13,6 +13,10 @@ dist
 dist-ssr
 *.local
 
+# Exclude generated content
+/NestJS/nest-gpt/generated/*
+!/NestJS/nest-gpt/generated/.gitkeep
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
