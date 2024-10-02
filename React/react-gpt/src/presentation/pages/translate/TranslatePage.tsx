@@ -44,8 +44,6 @@ export const TranslateStreamPage = () => {
     const newMessage = `Traduce: "${text} al idioma ${lang}`;
     setMessages((prev) => [...prev, { text: newMessage, isGpt: false }]);
 
-    console.log(lang, text);
-
     const stream = translateStreamGeneratorUseCase(
       lang,
       text,
