@@ -22,7 +22,10 @@ import {
   TranslateDto,
   TextToAudioDto,
   AudioToTextDto,
+  ImageGenerationDto,
+  ImageVariationDto,
 } from './dtos';
+import { v4 } from 'uuid';
 
 @Controller('gpt')
 export class GptController {
@@ -111,7 +114,7 @@ export class GptController {
         destination: './generated/uploads',
         filename: (req, file, callback) => {
           const fileExtension = file.originalname.split('.').pop();
-          const fileName = `${new Date().getTime()}.${fileExtension}`;
+          const fileName = `${v4()}.${fileExtension}`;
           return callback(null, fileName);
         },
       }),
@@ -133,5 +136,26 @@ export class GptController {
     @Body() audioToTextDto: AudioToTextDto,
   ) {
     return this.gptService.audioToText({ ...audioToTextDto, audioFile: file });
+  }
+
+  @Post('image-generation')
+  imageGeneration(@Body() imageGenerationDto: ImageGenerationDto) {
+    return this.gptService.imageGeneration(imageGenerationDto);
+  }
+
+  @Get('image-generation/:filename')
+  async getGeneratedImage(
+    @Res() res: Response,
+    @Param('filename') filename: string,
+  ) {
+    const filePath = await this.gptService.getGeneratedImage(filename);
+
+    res.status(HttpStatus.OK);
+    res.sendFile(filePath);
+  }
+
+  @Post('image-generation-variation')
+  imageGenerationVariation(@Body() imageVariationDto: ImageVariationDto) {
+    return this.gptService.generateImageVariation(imageVariationDto);
   }
 }
