@@ -6,3 +6,5 @@ export * from "./textToAudio.use-case";
 export * from "./translate.use-case";
 export * from "./translateStream.use-case";
 export * from "./audioToText.use-case";
+export * from "./imageGeneration.use-case";
+export * from "./imageVariation.use-case";
