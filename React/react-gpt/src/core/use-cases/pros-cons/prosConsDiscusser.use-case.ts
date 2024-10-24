@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ProsConsDiscusserResponse } from "../../interfaces";
+import { ProsConsDiscusserResponse } from "../../../interfaces";
 
 export const prosConsDiscusserUseCase = async (prompt: string) => {
   try {

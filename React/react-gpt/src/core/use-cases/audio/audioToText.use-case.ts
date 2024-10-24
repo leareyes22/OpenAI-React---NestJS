@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AudioToTextResponse } from "../../interfaces";
+import { AudioToTextResponse } from "../../../interfaces";
 
 export const audioToTextUseCase = async (prompt: string, file: File) => {
   try {
