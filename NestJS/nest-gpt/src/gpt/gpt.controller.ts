@@ -24,6 +24,7 @@ import {
   AudioToTextDto,
   ImageGenerationDto,
   ImageVariationDto,
+  ImageToTextDto,
 } from './dtos';
 import { v4 } from 'uuid';
 
@@ -157,5 +158,36 @@ export class GptController {
   @Post('image-generation-variation')
   imageGenerationVariation(@Body() imageVariationDto: ImageVariationDto) {
     return this.gptService.generateImageVariation(imageVariationDto);
+  }
+
+  @Post('image-to-text')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './generated/uploads',
+        filename: (req, file, callback) => {
+          const fileExtension = file.originalname.split('.').pop();
+          const fileName = `${v4()}.${fileExtension}`;
+          return callback(null, fileName);
+        },
+      }),
+    }),
+  )
+  async imageToText(
+    @UploadedFile(
+      new ParseFilePipe({
+        validators: [
+          new MaxFileSizeValidator({
+            maxSize: 1000 * 1024 * 5,
+            message: 'File is bigger than 5 MB.',
+          }),
+          new FileTypeValidator({ fileType: 'image/*' }),
+        ],
+      }),
+    )
+    file: Express.Multer.File,
+    @Body() imageToTextDto: ImageToTextDto,
+  ) {
+    return this.gptService.imageToText({ ...imageToTextDto, imageFile: file });
   }
 }
