@@ -8,6 +8,7 @@ import {
   audioToTextUseCase,
   imageGenerationUseCase,
   imageVariationUseCase,
+  imageToTextUseCase,
   orthographyCheckUseCase,
   prosConsDiscusserStreamUseCase,
   prosConsDiscusserUseCase,
@@ -17,6 +18,7 @@ import {
 } from './use-cases';
 import {
   AudioToTextDto,
+  ImageToTextDto,
   OrthographyDto,
   ProConsDiscusserDto,
   TextToAudioDto,
@@ -108,9 +110,16 @@ export class GptService {
     return filePath;
   }
 
-  async generateImageVariation({ baseImage }: ImageVariationDto) {
+  async generateImageVariation(imageVariationDto: ImageVariationDto) {
     return imageVariationUseCase(this.openai, {
-      baseImage,
+      baseImage: imageVariationDto.baseImage,
+    });
+  }
+
+  async imageToText(imageToTextDto: ImageToTextDto) {
+    return imageToTextUseCase(this.openai, {
+      prompt: imageToTextDto.prompt,
+      imageFile: imageToTextDto.imageFile,
     });
   }
 }
