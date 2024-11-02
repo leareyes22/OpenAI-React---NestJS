@@ -32,7 +32,7 @@ export const TextMessageBox = ({
             type="text"
             autoFocus
             name="message"
-            className="flex w-full border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-300 pl-4 h10"
+            className="flex w-full border rounded-xl text-gray-800 focus:outline-none focus:border-teal-400 pl-4 h10"
             placeholder={placeholder}
             autoComplete={disableCorrections ? "on" : "off"}
             autoCorrect={disableCorrections ? "on" : "off"}
