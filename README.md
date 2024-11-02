@@ -15,3 +15,5 @@ ReactJS Frontend
 2. Instalar dependencias `npm install`
 3. Crear archivo .env basado en el .env.template
 4. Ejecutar `npm run dev`
+
+![image](https://github.com/user-attachments/assets/29308158-7a95-402d-938d-606f047e0659)
