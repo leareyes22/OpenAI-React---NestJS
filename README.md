@@ -1,3 +1,5 @@
+Proyecto creado a través del curso https://www.udemy.com/course/react-nest-openai/ de Fernando Herrera.
+
 # Instalación en Dev
 
 1. Clonar el repositorio con `git clone`
