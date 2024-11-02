@@ -41,7 +41,7 @@ export const TextMessageBoxSelect = ({
             type="text"
             autoFocus
             name="message"
-            className="w-full border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-300 pl-4 h10"
+            className="w-full border rounded-xl text-gray-800 focus:outline-none focus:border-teal-400 pl-4 h10"
             placeholder={placeholder}
             autoComplete={disableCorrections ? "on" : "off"}
             autoCorrect={disableCorrections ? "on" : "off"}
@@ -50,7 +50,7 @@ export const TextMessageBoxSelect = ({
           />
           <select
             name="select"
-            className="w-2/5 ml-5 border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-300 pl-4 h-10"
+            className="w-2/5 ml-5 border rounded-xl text-gray-800 focus:outline-none focus:border-teal-400 pl-4 h-10"
             onChange={(e) => setSelectedOption(e.target.value)}
           >
             <option value="">{"Seleccione"}</option>

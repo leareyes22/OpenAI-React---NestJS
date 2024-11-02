@@ -22,7 +22,7 @@ ul {
 }
 
 strong {
-  @apply font-bold text-indigo-400;
+  @apply font-bold text-teal-400;
 }
 
 em {
@@ -30,11 +30,11 @@ em {
 }
 
 .btn-primary {
-  @apply bg-indigo-500 text-white font-bold py-2 px-4 rounded-xl hover:bg-indigo-700 transition-all duration-200 ease-in-out;
+  @apply bg-teal-500 text-white font-bold py-2 px-4 rounded-xl hover:bg-teal-700 transition-all duration-200 ease-in-out;
 }
 
 .btn-primary:disabled {
-  @apply bg-indigo-500 text-white font-bold py-2 px-4 rounded-xl opacity-50 cursor-not-allowed;
+  @apply bg-teal-500 text-white font-bold py-2 px-4 rounded-xl opacity-50 cursor-not-allowed;
 }
 
 .chat-container {
